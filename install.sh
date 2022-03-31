@@ -1,4 +1,4 @@
-sudo mv -r lily /usr/
+sudo mv lily /usr/
 sudo chown $(whoami) /usr/lily/
 sudo echo "alias lily=/usr/lily/package.sh" >> ~/.bashrc && . ~/.bashrc
 cargo install --path .
