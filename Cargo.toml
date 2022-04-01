@@ -6,7 +6,6 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
  
 [dependencies]
-easy = "*"
-curl = "*"
-tar = "*"
-sudo = "*"
+easy = "0.1.1"
+curl = "0.4.43"
+sudo = "0.6.0"
