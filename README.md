@@ -5,7 +5,7 @@ installation:
 sh install.sh
 ```
 <br/> 
-Usage: "lily $(package name)"
+Usage: "lily $(option) $(package name)"
 
 dependencys:
 rust
