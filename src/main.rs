@@ -1,7 +1,7 @@
 
 use curl::easy::Easy;
 use std::env;
-use std::fs::File;
+use std::fs::{File, remove_file};
 use std::io::Write;
 use std::process::Command;
 use std::{thread, time};
@@ -47,15 +47,16 @@ fn main() -> Result<(), Box<dyn Error>> {
         Command::new("tar")
             .arg("-xf")
             .arg(&path)
-            .spawn()
+            .output()
             .expect("Command failed to start");
-
-            thread::sleep(time::Duration::from_secs(1));
 
         Command::new("sh")
             .arg(format!("{}/install.sh", args[2]))
-            .spawn()
+            .output()
             .expect("Command failed to start");
+
+        remove_file(&path)?;
+        
     }
     Ok(())
 }
