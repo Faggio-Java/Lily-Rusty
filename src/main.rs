@@ -57,6 +57,11 @@ fn main() -> Result<(), Box<dyn Error>> {
 
         remove_file(&path)?;
         
+        } else if args[1] == "installed" {
+        let mut path = File::open("/usr/lily/ports/installed.sh").expect("File doesn't exist?");
+        let mut text = String::new();
+        path.read_to_string(&mut text);
+        println!("{}", text);
     }
     Ok(())
 }
