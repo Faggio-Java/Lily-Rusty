@@ -1,8 +1,7 @@
-
 use curl::easy::Easy;
 use std::env;
 use std::fs::{File, remove_file};
-use std::io::Write;
+use std::io::{Write, Read};
 use std::process::Command;
 use std::{thread, time};
 use std::error::Error;
