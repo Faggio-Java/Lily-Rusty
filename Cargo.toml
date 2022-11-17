@@ -9,3 +9,5 @@ edition = "2021"
 easy = "0.1.1"
 curl = "0.4.43"
 sudo = "0.6.0"
+scraper = "0.13.0"
+reqwest = { version = "0.11.13", features = ["blocking"] }
