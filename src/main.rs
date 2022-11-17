@@ -3,7 +3,6 @@ use std::env;
 use std::fs::{File, remove_file};
 use std::io::{Write, Read};
 use std::process::Command;
-use std::{thread, time};
 use std::error::Error;
 
 fn main() -> Result<(), Box<dyn Error>> {
@@ -59,8 +58,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     } else if args[1] == "installed" {
         let mut path = File::open("/usr/lily/ports/installed.sh").expect("File doesn't exist?");
         let mut text = String::new();
-        path.read_to_string(&mut text);
-        println!("{}", text);
+        println!("{:?}", path.read_to_string(&mut text));
     }
     Ok(())
 }
